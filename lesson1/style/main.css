@@ -1,0 +1,22 @@
+img {
+    width: 200px;
+}
+h1 {
+    background: lightgreen;
+    color: darkgreen;
+}
+a {
+    background: lightblue;
+    color: darkblue;
+}
+p {
+    background: lightcoral;
+    color: darkred;
+}
+img {
+    background: lightgray;
+}
+li {
+    background: lightpink;
+    color: darkmagenta;
+}
