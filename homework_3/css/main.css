@@ -1,0 +1,29 @@
+.grid {
+    grid-template-rows: repeat(var(--bs-rows, 0), 1fr);
+}
+
+.h-1 {
+    height: 20%;
+}
+
+.h-2 {
+    height: 80%;
+}
+
+@media screen and (min-width: 576px) {
+    .h-1 {
+        height: 33.33%;
+    }
+
+    .h-2 {
+        height: 66.66%;
+    }
+}
+
+.h-300px {
+    height: 300px;
+}
+
+.h-600px {
+    height: 600px;
+}
