@@ -1,4 +1,5 @@
-// First task
+// Створити змінні. Присвоїти кожному з них значення: 'hello','owu','com', 'ua', 1, 10, -999, 123, 3.14, 2.7, 16, true, false.
+// Вивести кожну змінну за допомогою: console.log
 
 let hello = 'hello';
 let owu = 'owu';
@@ -28,16 +29,17 @@ console.log(st);
 console.log(t);
 console.log(f);
 
-// Second task
+// Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person (Не об'єкт, просто за допомоги конкатенації)
 
 let firstName = "Roman";
 let middleName = "Serhiiovych";
 let lastName = "Serhieiev";
-let person = lastName+" "+firstName+" "+middleName;
+let person = lastName + " " + firstName + " " + middleName;
 
 console.log(person);
 
-// Third task
+// За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
+// let a = 100; let b = '100'; let c = true;
 
 let a = 100;
 let b = '100';
@@ -47,13 +49,10 @@ console.log(typeof a);
 console.log(typeof b);
 console.log(typeof c);
 
-// Fourth task
+// За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками. та вивести в консоль
 
-let fn = prompt("My name","");
-let mn = prompt("My middle name","");
-let age = prompt("My age","");
-let mfn = "My name is";
-let mage1 = "and I'm";
-let mage2 = "years old.";
+let fn = prompt("My name");
+let mn = prompt("My middle name");
+let age = parseInt(prompt("My age"));
 
-console.log(`${mfn} ${fn} ${mn} ${mage1} ${age} ${mage2}`);
+console.log(`${"My name is"} ${fn} ${mn} ${"and I'm"} ${age} ${"years old."}`);
