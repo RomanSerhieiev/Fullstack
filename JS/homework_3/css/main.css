@@ -1,0 +1,62 @@
+.main-h1 {
+    text-align: center;
+}
+
+.main-h1:nth-child(4n+1), .container:nth-child(4n+2) .flex-item, .user-block {
+    color: #2C5F2D;
+}
+
+.main-h1:nth-child(4n+3), .container:nth-child(4n+4) .flex-item, .list, .product-card, .address-block, .post-card {
+    color: #00008b;
+}
+
+.flex-item, .user-block, .post-card {
+    padding: 0 20px;
+    flex: auto;
+}
+
+.user-block {
+    width: 40%;
+    padding-bottom: 20px;
+}
+
+.post-card {
+    width: 14%;
+}
+
+.address-block {
+    padding: 0 20px;
+}
+
+.container, .users-box, .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.container:nth-child(4n+2) .flex-item, .user-block {
+    border: 1px solid #2C5F2D;
+    background: #97BC62FF;
+}
+
+.container:nth-child(4n+4) .flex-item, .list, .product-card, .address-block, .post-card {
+    border: 1px solid #00008b;
+    background: #ADD8E6;
+}
+
+.flex-item li {
+    margin: 20px;
+}
+
+li, p {
+    font-size: 20px;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.image {
+    height: 400px;
+}
