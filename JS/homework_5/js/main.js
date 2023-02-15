@@ -168,7 +168,7 @@ let swapIndex = (array, firstIndex, secondIndex) => {
     return array
 }
 console.log("Зміна місць значень масиву:");
-console.log(arrayOutputConsole(swapIndex([11, 22, 33, 44], 0, 1)));
+arrayOutputConsole(swapIndex([11, 22, 33, 44], 0, 1));
 console.log("");
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency).
