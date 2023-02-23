@@ -1,24 +1,24 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б.
-let areaRectangle = (width, height) => Math.round(width * height);
 console.log("Площа прямокутника:");
+const areaRectangle = (width, height) => Math.round(width * height);
 console.log(areaRectangle(20, 10));
 console.log("");
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r.
-let areaCircle = (radius) => Math.round(Math.PI * Math.pow(radius, 2));
+const areaCircle = (radius) => Math.round(Math.PI * Math.pow(radius, 2));
 console.log("Площа кола:");
 console.log(areaCircle(10));
 console.log("");
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіусом r.
-let areaCylinder = (radius, height) => Math.round(2 * Math.PI * radius * height + 2 * Math.PI * Math.pow(radius, 2));
+const areaCylinder = (radius, height) => Math.round(2 * Math.PI * radius * height + 2 * Math.PI * Math.pow(radius, 2));
 console.log("Площа циліндру:");
 console.log(areaCylinder(10, 10));
 console.log("");
 
 // - створити функцію яка приймає масив та виводить кожен його елемент.
 // *КОНСОЛЬ*
-let arrayOutputConsole = (array) => {
+const arrayOutputConsole = (array) => {
     for (const item of array) {
         if (Array.isArray(item)) {
             arrayOutputConsole(item)
@@ -31,7 +31,7 @@ console.log("Елементи масиву:");
 arrayOutputConsole([1, [2, [3, [4, [5], 6], 7], 8], 9]);
 console.log("");
 // *ДОКУМЕНТ*
-let arrayOutputDocument = (array) => {
+const arrayOutputDocument = (array) => {
     for (const item of array) {
         if (Array.isArray(item)) {
             arrayOutputDocument(item)
@@ -43,16 +43,16 @@ let arrayOutputDocument = (array) => {
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент.
 // *КОНСОЛЬ*
-let textParagraphConsole = (text) => console.log(text);
+const textParagraphConsole = (text) => console.log(text);
 console.log("Параграф:");
 textParagraphConsole("Lorem 1");
 console.log("");
 // *ДОКУМЕНТ*
-let textParagraphDocument = (text) => document.write(`<p><span>${text}</span></p>`);
+const textParagraphDocument = (text) => document.write(`<p><span>${text}</span></p>`);
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
 // *КОНСОЛЬ*
-let listStrictConsole = (text) => {
+const listStrictConsole = (text) => {
     console.log(text);
     console.log(text);
     console.log(text)
@@ -61,7 +61,7 @@ console.log("Суворий список:");
 listStrictConsole("Lorem 2");
 console.log("");
 // *ДОКУМЕНТ*
-let listStrictDocument = (text) => document.write(`<ul>
+const listStrictDocument = (text) => document.write(`<ul>
                                                        <li><span>${text}</span></li>
                                                        <li><span>${text}</span></li>
                                                        <li><span>${text}</span></li>
@@ -70,7 +70,7 @@ let listStrictDocument = (text) => document.write(`<ul>
 // - створити функцію яка створює ul з елементами li. Текст li задати через аргумент всім однаковий.
 // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл).
 // *КОНСОЛЬ*
-let listFlexibleConsole = (text, listItems) => {
+const listFlexibleConsole = (text, listItems) => {
     for (let i = 0; i < listItems; i++) {
         console.log(text)
     }
@@ -79,7 +79,7 @@ console.log("Гнучкий список:");
 listFlexibleConsole("Lorem 3", 3);
 console.log("");
 // *ДОКУМЕНТ*
-let listFlexibleDocument = (text, listItems) => {
+const listFlexibleDocument = (text, listItems) => {
     document.write(`<ul>`);
     for (let i = 0; i < listItems; i++) {
         document.write(`<li><span>${text}</span></li>`)
@@ -89,7 +89,7 @@ let listFlexibleDocument = (text, listItems) => {
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список.
 // *КОНСОЛЬ*
-let listArrayConsole = (array) => {
+const listArrayConsole = (array) => {
     for (const item of array) {
         console.log(item);
     }
@@ -98,7 +98,7 @@ console.log("Список з масиву:");
 listArrayConsole([1, "Lorem 4", true, false]);
 console.log("");
 // *ДОКУМЕНТ*
-let listArrayDocument = (array) => {
+const listArrayDocument = (array) => {
     document.write(`<ol start="0">`);
     for (const item of array) {
         document.write(`<li><span>${item}</span></li>`)
@@ -109,7 +109,7 @@ let listArrayDocument = (array) => {
 // - створити функцію яка приймає масив об'єктів з наступними полями id, name, age, та виводить їх в документ.
 // Для кожного об'єкту окремий блок.
 // *КОНСОЛЬ*
-let listObjectConsole = (array) => {
+const listObjectConsole = (array) => {
     for (const item of array) {
         for (const itemKey in item) {
             console.log(itemKey + ": " + item[itemKey]);
@@ -120,7 +120,7 @@ console.log("Масив об'єктів:");
 listObjectConsole([{id: 1, name: "Ann", age: 31}, {id: 2, name: "Drew", age: 32}, {id: 3, name: "Andrew", age: 33}]);
 console.log("");
 // *ДОКУМЕНТ*
-let listObjectDocument = (array) => {
+const listObjectDocument = (array) => {
     document.write(`<div class="flex">`)
     for (const item of array) {
         document.write(`<ul>`);
@@ -133,7 +133,7 @@ let listObjectDocument = (array) => {
 }
 
 // - створити функцію яка повертає найменьше число з масиву.
-let smallestNumber = (array) => {
+const smallestNumber = (array) => {
     let number = array[0];
     for (const item of array) {
         if (item < number) {
@@ -148,7 +148,7 @@ console.log("");
 
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його.
 // Приклад sum([1,2,10]) //->13.
-let sumArray = (array) => {
+const sumArray = (array) => {
     let sum = 0;
     for (const item of array) {
         sum += item
@@ -161,7 +161,7 @@ console.log("");
 
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями значення у відповідних індексах.
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44].
-let swapIndex = (array, firstIndex, secondIndex) => {
+const swapIndex = (array, firstIndex, secondIndex) => {
     let value = array[firstIndex];
     array[firstIndex] = array[secondIndex];
     array[secondIndex] = value;
@@ -173,7 +173,7 @@ console.log("");
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency).
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250.
-let exchangeCurrency = (sumUAH, currencyValues, exchangeCurrency) => {
+const exchangeCurrency = (sumUAH, currencyValues, exchangeCurrency) => {
     for (const currency of currencyValues) {
         for (const currencyKey in currency) {
             if (currency.currency === exchangeCurrency)
@@ -193,7 +193,7 @@ document.write(`<div class="container">
                         <section class="areaRectangle active">
                             <h2>Площа прямокутника</h2>
                             <p>Функція, яка обчислює та повертає площу прямокутника.</p>
-                            <p>Результат: <span>${areaRectangle(20, 10)}</span></p>
+                            <p>Результат: <span>${areaRectangle(30, 10)}</span></p>
                         </section>
                         <section class="areaCircle">
                             <h2>Площа кола</h2>

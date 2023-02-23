@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Homework 6</title>
+</head>
+<body>
+<div class="container">
+    <main>
+        <header>
+            <h1>HOMEWORK #6</h1>
+        </header>
+        <nav class="nav">
+            <p class="nav-item string-length active">TASK #1</p>
+            <p class="nav-item string-uppercase">TASK #2</p>
+            <p class="nav-item string-lowercase">TASK #3</p>
+            <p class="nav-item string-clean">TASK #4</p>
+            <p class="nav-item string-array">TASK #5</p>
+            <p class="nav-item array-map">TASK #6</p>
+            <p class="nav-item array-sort">TASK #7</p>
+            <p class="nav-item courses">TASK #8</p>
+            <p class="nav-item cards">TASK #9</p>
+            <div id="slider"></div>
+        </nav>
+        <section>
+            <article id="string-length" class="string-length active">
+                <h2>Довжина рядка</h2>
+                <p>Визначення довжини рядка.</p>
+                <input type="text" class="input" placeholder="Введіть текст...">
+                <p>Результат: <span>0</span></p>
+            </article>
+            <article id="string-uppercase" class="string-uppercase">
+                <h2>Верхній регістр</h2>
+                <p>Переведення літер до верхнього регістру.</p>
+                <input type="text" class="input" placeholder="Введіть текст...">
+                <p>Результат: <span></span></p>
+            </article>
+            <article id="string-lowercase" class="string-lowercase">
+                <h2>Нижній регістр</h2>
+                <p>Переведення літер до нижнього регістру.</p>
+                <input type="text" class="input" placeholder="Введіть текст...">
+                <p>Результат: <span></span></p>
+            </article>
+            <article id="string-clean" class="string-clean">
+                <h2>Видалення пробілів</h2>
+                <p>Видалення зайвих пробілів з рядка.</p>
+                <input type="text" class="input" placeholder="Введіть текст...">
+                <p>Результат: <span></span></p>
+            </article>
+            <article id="string-array" class="string-array">
+                <h2>Масив слів</h2>
+                <p>Створення масиву слів з рядка.</p>
+                <input type="text" class="input" placeholder="Введіть текст...">
+                <p>Результат: <span></span></p>
+            </article>
+            <article id="array-map" class="array-map">
+                <h2>Об'єкти у рядки</h2>
+                <p>Перетворення об'єктів масиву у рядки.</p>
+                <input type="text" class="input" placeholder="Введіть масив...">
+                <p>Результат: <span></span></p>
+            </article>
+            <article id="array-sort" class="array-sort">
+                <h2>Сортування чисел масиву</h2>
+                <input type="text" class="input" placeholder="Введіть масив...">
+                <div class="switcher-1">
+                    <p class="active">Ascending</p>
+                    <div class="switch">
+                        <input id="switch-1" type="checkbox">
+                        <label for="switch-1"></label>
+                    </div>
+                    <p>Descending</p>
+                </div>
+                <p>Результат: <span></span></p>
+            </article>
+            <article class="courses">
+                <h2>Масив курсів</h2>
+                <div class="filter">
+                    <div class="switcher-2">
+                        <p class="active">За спаданням тривалості</p>
+                        <div class="switch">
+                            <input id="switch-2" type="checkbox">
+                            <label for="switch-2"></label>
+                        </div>
+                        <p>За зростанням тривалості</p>
+                    </div>
+                    <div class="ranger">
+                        <p>Годин від: <span class="top"></span></p>
+                        <div class="multi-range-slider">
+                            <input type="range" id="input-left-1" min="" max="" value="">
+                            <input type="range" id="input-right-1" min="" max="" value="">
+                            <div class="slider">
+                                <div class="track"></div>
+                                <div class="thumb left"></div>
+                                <div class="thumb right"></div>
+                            </div>
+                        </div>
+                        <p>Годин до: <span class="bottom"></span></p>
+                    </div>
+                    <div class="checkbox">
+                        <button id="reset-btn-1">Скинути</button>
+                    </div>
+                </div>
+                <div id="courses"></div>
+            </article>
+            <article class="cards">
+                <h2>Колода карт</h2>
+                <div class="filter">
+                    <div class="switcher-3">
+                        <p class="active">За спаданням значення</p>
+                        <div class="switch">
+                            <input id="switch-3" type="checkbox">
+                            <label for="switch-3"></label>
+                        </div>
+                        <p>За зростанням значення</p>
+                    </div>
+                    <div class="ranger">
+                        <p>Значення від: <span class="top"></span></p>
+                        <div class="multi-range-slider">
+                            <input type="range" id="input-left-2" min="" max="" value="">
+                            <input type="range" id="input-right-2" min="" max="" value="">
+                            <div class="slider">
+                                <div class="track"></div>
+                                <div class="thumb left"></div>
+                                <div class="thumb right"></div>
+                            </div>
+                        </div>
+                        <p>Значення до: <span class="bottom"></span></p>
+                    </div>
+                    <div class="checkbox">
+                        <button id="reset-btn-2">Скинути</button>
+                    </div>
+                </div>
+                <div id="cards"></div>
+            </article>
+        </section>
+    </main>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

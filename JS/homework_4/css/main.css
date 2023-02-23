@@ -1,0 +1,232 @@
+@font-face {
+    font-family: Reaver-regular;
+    src: url(../fonts/Reaver-Regular.woff);
+}
+
+@font-face {
+    font-family: Reaver-semi-bold;
+    src: url(../fonts/Reaver-SemiBold.woff);
+}
+
+@font-face {
+    font-family: Reaver-bold;
+    src: url(../fonts/Reaver-Bold.woff);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    background-color: #EBECF0;
+    color: #BABECC;
+}
+
+button {
+    border: none;
+    color: #61677C;
+}
+
+.container {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: Reaver-regular, serif;
+}
+
+@media screen and (max-width: 900px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    section h2 {
+        grid-column: 1/span 3;
+    }
+
+    section p {
+        grid-column: 1/span 3;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    main {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    main {
+        width: 1200px;
+    }
+}
+
+main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, min-content);
+    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .5s ease;
+    grid-column: 3/4;
+    grid-row: 3/4;
+    font-size: 20px;
+}
+
+.btn:hover {
+    color: #AE1100;
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+
+.btn:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.btn:disabled {
+    color: #BABECC;
+    background-color: #61677C;
+    box-shadow: none;
+}
+
+header {
+    justify-self: center;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 40px;
+    font-family: Reaver-bold, serif;
+    color: #AE1100;
+    transition: .5s ease;
+    text-shadow: 1px 1px 1px #FFF;
+}
+
+.input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    text-shadow: 1px 1px 0 #FFF;
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    transition: all .2s ease-in-out;
+    background: none;
+    font-family: inherit;
+    color: #61677C;
+}
+
+.input::placeholder {
+    color: #BABECC;
+}
+
+.input:focus {
+    outline: none;
+    color: #61677C;
+    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+}
+
+.input:invalid {
+    box-shadow: inset 1px 1px 2px #AE1100, inset -1px -1px 2px #FFF;
+}
+
+.nav {
+    padding: 10px;
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fit, min-content);
+    gap: 10px;
+    position: relative;
+    text-shadow: 1px 1px 0 #FFF;
+}
+
+.nav .active {
+    transition: all .5s ease;
+    font-family: Reaver-semi-bold, serif;
+    color: #AE1100;
+}
+
+.nav-item {
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.nav-item:hover {
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+    border-radius: 5px;
+    color: #61677C;
+}
+
+.nav-item.active {
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    pointer-events: none;
+}
+
+section {
+    padding: 10px;
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    border-radius: 15px;
+    display: none;
+    grid-template-rows: repeat(auto-fit, min-content);
+    gap: 10px;
+    justify-content: center;
+    text-shadow: 1px 1px 0 #FFF;
+}
+
+section h2 {
+    font-size: 30px;
+    font-family: Reaver-semi-bold, serif;
+    color: #AE1100;
+    transition: .5s ease;
+    text-align: center;
+}
+
+section p {
+    color: #61677C;
+}
+
+section.active {
+    display: grid;
+}
+
+section p:last-child {
+    display: none;
+}
+
+section p:last-child.active {
+    display: block;
+}
