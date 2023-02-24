@@ -296,7 +296,7 @@ stringCleanInput.addEventListener('input', () => {
 const stringArrayInput = document.querySelector('#string-array .input');
 const stringArrayResult = document.querySelector('#string-array span');
 stringArrayInput.addEventListener('input', () => {
-    stringArrayResult.innerText = '[\"' + stringArrayInput.value.split(/\W+/).filter(Boolean).join('\", \"') + '\"]'
+    stringArrayResult.innerText = '[\"' + stringArrayInput.value.split(' ').filter(Boolean).join('\", \"') + '\"]'
 })
 
 // 6. Перетворення об'єктів масиву у рядки.
@@ -657,8 +657,6 @@ cards2.forEach(color => {
 cards2.forEach(cardSuit => {
     uniqueSuits.add(cardSuit);
 });
-
-console.log(uniqueValues);
 
 // uniqueNames.forEach(name => {
 //     const checkboxDiv = document.createElement('div');
