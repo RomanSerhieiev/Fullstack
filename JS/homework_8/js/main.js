@@ -93,12 +93,12 @@ console.log("");
 function CarFunction(model, manufacturer, year, maxSpeed, engineVolume) {
     this.model = model;
     this.manufacturer = manufacturer;
-    this.year = year;
-    this.maxSpeed = maxSpeed;
-    this.engineVolume = engineVolume;
+    this.year = parseInt(year);
+    this.maxSpeed = parseInt(maxSpeed);
+    this.engineVolume = parseInt(engineVolume);
 
     this.drive = function () {
-        console.log(`Їдемо зі швидкістю ${this.maxSpeed} на годину.`)
+        console.log(`Їдемо зі швидкістю ${this.maxSpeed} км/год`)
     }
 
     this.info = function () {
@@ -110,30 +110,60 @@ function CarFunction(model, manufacturer, year, maxSpeed, engineVolume) {
     }
 
     this.increaseMaxSpeed = function (newSpeed) {
-        this.maxSpeed += newSpeed
+        this.maxSpeed += newSpeed;
+        console.log(`Нова максимальна швидкість: ${this.maxSpeed}`)
     }
 
     this.changeYear = function (newValue) {
-        this.year = newValue
+        this.year = newValue;
+        console.log(`Новий рік випуску: ${this.year}`)
     }
 
     this.addDriver = function (driver) {
-        this.driver = driver
+        this.driver = driver;
+        console.log(`Водій: ${this.driver}`)
     }
 }
+
+const carsFunction = [];
+
+for (let i = 0; i < 10; i++) {
+    const car = new CarFunction(
+        `Model${i + 1}`,
+        `Manufacturer${i + 1}`,
+        `${i + 2000}`,
+        `${i + 200}`,
+        `${i + 500}`
+    )
+    carsFunction.push(car);
+}
+
+console.log("8. Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна та наступні функції drive(), info(), increaseMaxSpeed(newSpeed), changeYear(newValue), addDriver(driver)");
+console.log("");
+
+for (let i = 0; i < carsFunction.length; i++) {
+    carsFunction[i].info();
+    carsFunction[i].drive();
+    carsFunction[i].increaseMaxSpeed(i + 10);
+    carsFunction[i].changeYear(2020 - i);
+    carsFunction[i].addDriver(users[i].name);
+    console.log("-----------------");
+}
+
+console.log("");
 
 // 9. (Те саме, тільки через клас).
 class CarClass {
     constructor(model, manufacturer, year, maxSpeed, engineVolume) {
         this.model = model;
         this.manufacturer = manufacturer;
-        this.year = year;
-        this.maxSpeed = maxSpeed;
-        this.engineVolume = engineVolume;
+        this.year = parseInt(year);
+        this.maxSpeed = parseInt(maxSpeed);
+        this.engineVolume = parseInt(engineVolume);
     }
 
     drive() {
-        console.log(`Їдемо зі швидкістю ${this.maxSpeed} на годину.`)
+        console.log(`Їдемо зі швидкістю ${this.maxSpeed} км/год`)
     }
 
     info() {
@@ -145,17 +175,47 @@ class CarClass {
     }
 
     increaseMaxSpeed(newSpeed) {
-        this.maxSpeed += newSpeed
+        this.maxSpeed += newSpeed;
+        console.log(`Нова максимальна швидкість: ${this.maxSpeed}`)
     }
 
     changeYear(newValue) {
-        this.year = newValue
+        this.year = newValue;
+        console.log(`Новий рік випуску: ${this.year}`)
     }
 
     addDriver(driver) {
-        this.driver = driver
+        this.driver = driver;
+        console.log(`Водій: ${this.driver}`)
     }
 }
+
+const carsClass = [];
+
+for (let i = 0; i < 10; i++) {
+    const car = new CarClass(
+        `Model${i + 1}`,
+        `Manufacturer${i + 1}`,
+        `${i + 2000}`,
+        `${i + 200}`,
+        `${i + 500}`
+    )
+    carsClass.push(car);
+}
+
+console.log("9. Те саме, тільки через клас.");
+console.log("");
+
+for (let i = 0; i < carsClass.length; i++) {
+    carsClass[i].info();
+    carsClass[i].drive();
+    carsClass[i].increaseMaxSpeed(i + 10);
+    carsClass[i].changeYear(2020 - i);
+    carsClass[i].addDriver(users[i].name);
+    console.log("-----------------");
+}
+
+console.log("");
 
 // 10. Створити клас/функцію-конструктор "попелюшка" з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 class Cinderella {
