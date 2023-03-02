@@ -27,17 +27,14 @@ console.log(users);
 console.log("");
 
 // 3. Взяти масив з User[] з попереднього завдання, та відфільтрувати, залишивши тільки об'єкти з парними id (filter).
-const filteredUsers = users.filter(user => user.id % 2 === 0);
+const filteredUsers = users.filter(user => !(user.id % 2));
 
 console.log("3. Взяти масив з User[] з попереднього завдання, та відфільтрувати, залишивши тільки об'єкти з парними id (filter).");
 console.log(filteredUsers);
 console.log("");
 
 // 4. Взяти масив з User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort).
-const sortedUsers = users.sort(function (a, b) {
-        return a.id - b.id
-    }
-)
+const sortedUsers = users.sort((a, b) => a.id - b.id);
 
 console.log("4. Взяти масив з User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort).");
 console.log(sortedUsers);
@@ -46,11 +43,7 @@ console.log("");
 // 5. Створити клас для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів).
 class Client {
     constructor(id, name, surname, email, phone, order) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.phone = phone;
+        User.call(this, id, name, surname, email, phone);
         this.order = order
     }
 }
@@ -75,10 +68,7 @@ console.log(clients);
 console.log("");
 
 // 7. Взяти масив (Client [] з попереднього завдання). Відсортувати його за кількістю товарів в полі order по зростанню (sort).
-const sortedClients = clients.sort(function (a, b) {
-        return a.order.length - b.order.length
-    }
-)
+const sortedClients = clients.sort((a, b) => a.order.length - b.order.length);
 
 console.log("7. Взяти масив (Client [] з попереднього завдання). Відсортувати його за кількістю товарів в полі order по зростанню (sort).");
 console.log(sortedClients);
@@ -102,11 +92,10 @@ function CarFunction(model, manufacturer, year, maxSpeed, engineVolume) {
     }
 
     this.info = function () {
-        console.log(`Модель: ${this.model}`);
-        console.log(`Виробник: ${this.manufacturer}`);
-        console.log(`Рік випуску: ${this.year}`);
-        console.log(`Максимальна швидкість: ${this.maxSpeed}`);
-        console.log(`Об'єм двигуна: ${this.engineVolume}`)
+        for (const key in this) {
+            if (typeof this[key] === 'function') continue;
+            console.log(`${key.toUpperCase()}: ${this.model}`);
+        }
     }
 
     this.increaseMaxSpeed = function (newSpeed) {
@@ -167,11 +156,9 @@ class CarClass {
     }
 
     info() {
-        console.log(`Модель: ${this.model}`);
-        console.log(`Виробник: ${this.manufacturer}`);
-        console.log(`Рік випуску: ${this.year}`);
-        console.log(`Максимальна швидкість: ${this.maxSpeed}`);
-        console.log(`Об'єм двигуна: ${this.engineVolume}`)
+        for (const key in this) {
+            console.log(`${key.toUpperCase()}: ${this.model}`);
+        }
     }
 
     increaseMaxSpeed(newSpeed) {
@@ -218,10 +205,16 @@ for (let i = 0; i < carsClass.length; i++) {
 console.log("");
 
 // 10. Створити клас/функцію-конструктор "попелюшка" з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
-class Cinderella {
-    constructor(name, age, shoeSize) {
+class Human {
+    constructor(name, age) {
         this.name = name;
-        this.age = age;
+        this.age = age
+    }
+}
+
+class Cinderella extends Human {
+    constructor(name, age, shoeSize) {
+        super(name, age);
         this.shoeSize = shoeSize;
     }
 }
@@ -242,10 +235,9 @@ console.log(cinderellas);
 console.log("");
 
 // 11. Створити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
-class Prince {
+class Prince extends Human {
     constructor(name, age, foundShoe) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.foundShoe = foundShoe;
     }
 }
