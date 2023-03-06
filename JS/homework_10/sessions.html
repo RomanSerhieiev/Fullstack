@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Homework #10</title>
+</head>
+<body>
+
+<h2>Історія відвідувань сторінки index.html</h2>
+<div id="sessions-container"></div>
+
+<script>
+  const sessions = JSON.parse(localStorage.getItem("sessions")) || [];
+
+  const sessionsContainer = document.getElementById("sessions-container");
+
+  sessions.forEach(session => {
+    const sessionElement = document.createElement("div");
+    sessionElement.textContent = `Дата та час відвідування: ${JSON.stringify(session)}`;
+    sessionsContainer.appendChild(sessionElement);
+  });
+</script>
+</body>
+</html>

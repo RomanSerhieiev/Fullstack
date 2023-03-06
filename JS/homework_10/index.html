@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Homework #10</title>
+</head>
+<body>
+
+<h2>Форма з полями для введення даних</h2>
+<form id="my-form">
+    <label for="name">Ім'я:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="surname">Прізвище:</label>
+    <input type="text" id="surname" name="surname"><br><br>
+
+    <label for="age">Вік:</label>
+    <input type="number" id="age" name="age"><br><br>
+
+    <button type="button" onclick="displayData()">Зчитати дані</button>
+</form>
+
+<h2>Результат</h2>
+<pre id="result"></pre>
+
+<h2>Лічильник</h2>
+<div class="number-block"></div>
+
+<h2>Слайдер</h2>
+<div id="container"></div>
+<button id="prev">Prev</button>
+<button id="next">Next</button>
+
+<h2>Табличка</h2>
+<label for="rows">Кількість рядків:</label>
+<input type="number" id="rows">
+<label for="columns">Кількість стовпців:</label>
+<input type="number" id="columns">
+<label for="content">Вміст ячеєк:</label>
+<input type="text" id="content">
+<button id="create-table">Створити таблицю</button>
+<div id="table-container"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
